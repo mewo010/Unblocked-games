@@ -1,0 +1,131 @@
+:root {
+  /* Colors */
+  --red: #dc2626;
+  --orange: #ff7c25;
+  --yellow: #ffc000;
+  --green: #7fbb43;
+  --blue: #0bc2cf;
+  --blue-dark: #118891;
+  --blue-dark-background: #099faa;
+  --blue-dark-border: #009bb6;
+  --blue-transparent: rgba(11, 194, 207, 0.3);
+  --blue-transparent-light: rgba(11, 194, 207, 0.05);
+  --teal-mastery: rgba(5, 91, 97, 1);
+  --teal-mastery-dark: #032d30;
+  --purple: #9a49aa;
+  --purple-dark: #411060;
+
+  /* Grayscale Colors */
+  --gray: #757575;
+  --gray-light: #e9e9e9;
+  --gray-dark: #5a5a5a;
+  --gray-text: #3a3a3a;
+  --gray-background: #f7f7f7;
+  --gray-border: #dcdcdc;
+  --gray-border-light: #ededed;
+  --gray-shadow: rgba(0, 0, 0, 0.2);
+  --gray-shadow-light: rgba(0, 0, 0, 0.15);
+  --gray-transparent: rgba(0, 0, 0, 0.7);
+  --gray-worldlanguages: #a1a1a1;
+  --gray-disabled: #d5d5d5;
+  --white: #ffffff;
+  --white-transparent: rgba(255, 255, 255, 0.2);
+  --black: #000000;
+
+  /* Curriculum Colors */
+  --red-ela: #dd2f1e;
+  --orange-trivia: #ff9337;
+  --green-socialstudies: #5bbe21;
+  --blue-math: #3747dd;
+  --pink-creativearts: #f16fb9;
+  --purple-science: #af5dc0;
+
+  /* Font size */
+  --font-xxs: 12px;
+  --font-xs: 14px;
+  --font-sm: 16px;
+  --font-md: 18px;
+  --font-lg: 20px;
+  --font-xl: 24px;
+  --font-xxl: 32px;
+  --font-xxxl: 44px;
+
+  /* Font weight */
+  --font-thin: 300;
+  --font-regular: 500;
+  --font-semibold: 600;
+  --font-bold: 700;
+
+  /* Buttons & Cards */
+  --transition-speed: 0.2s;
+  --button-shadow: 2px 2px var(--gray-shadow);
+  --button-radius: 10px;
+  --card-radius: 10px;
+  --circle-radius: 50%;
+
+  /* Z index */
+  --z-index-bottom: 1;
+  --z-index-middle: 10;
+  --z-index-top: 100;
+
+  /* Get color by curriculum subject id */
+  --ela: var(--red-ela);
+  --trivia: var(--orange-trivia);
+  --socialstudies: var(--green-socialstudies);
+  --math: var(--blue-math);
+  --science: var(--purple-science);
+  --creativearts: var(--pink-creativearts);
+  --worldlanguages: var(--gray-worldlanguages);
+
+  /* Override rsuite component default colors: https://rsuitejs.com/resources/palette/ */
+  --rs-primary-50: var(--gray-background) !important;
+  --rs-primary-100: #bcf5f5 !important;
+  --rs-primary-200: #8ae9eb !important;
+  --rs-primary-300: #5ddee3 !important;
+  --rs-primary-400: #32d0d9 !important;
+  --rs-primary-500: #0ac1cf !important;
+  --rs-primary-600: #08b7c7 !important;
+  --rs-primary-700: #06a6b8 !important;
+  --rs-primary-800: #038ea1 !important;
+  --rs-primary-900: #017182 !important;
+  --rs-bg-active: var(--blue);
+  --rs-slider-bar: var(--gray-border) !important;
+  --rs-listbox-option-hover-bg: var(--gray-background) !important;
+  --rs-input-focus-border: var(--gray-border) !important;
+  --rs-picker-value: var(--gray-text) !important;
+  --rs-state-focus-shadow: tranparent !important;
+  --rs-toggle-bg: var(--gray-border) !important;
+  --rs-toggle-hover-bg: var(--gray-shadow) !important;
+  --rs-tooltip-bg: var(--gray-text) !important;
+}
+
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Tooltips are rendered outside of component tree so need to be styled here */
+.rs-tooltip.rs-tooltip-arrow.placement-top,
+.rs-tooltip.rs-tooltip-arrow.placement-right,
+.rs-tooltip.rs-tooltip-arrow.placement-bottom,
+.rs-tooltip.rs-tooltip-arrow.placement-left,
+.rs-tooltip.rs-tooltip-arrow.placement-bottom-end {
+  padding: 5px 13px;
+  font-size: calc(var(--font-xs) + 1px);
+  line-height: 1.3;
+  text-align: center;
+}
+
+.sr-only {
+  position: absolute;
+  top: auto;
+  left: -10000px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+/* Prevent Calendar & Dropdown Picker from rendering below modals */
+.rs-picker-popup {
+  z-index: var(--z-index-top) !important;
+}

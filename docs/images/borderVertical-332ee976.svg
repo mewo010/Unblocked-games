@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg
+  id="Layer_1"
+  data-name="Layer 1"
+  xmlns="http://www.w3.org/2000/svg"
+  viewBox="0 0 110 110"
+  shape-rendering="crispEdges"
+>
+  <rect x="0" y="0" width="29" height="110" style="fill: #d34a0d" />
+  <rect x="5" y="0" width="18" height="110" style="fill: #eba62b" />
+  <rect x="12" y="0" width="12" height="110" style="fill: #ea7f29" />
+</svg>

@@ -3,23 +3,32 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" type="image/x-icon" href="/images/favicon.ico" />
+    <link rel="icon" type="image/x-icon" href="./images/favicon.ico" />
     <title>Blooket – Fun, Free, Educational Games for Everyone</title>
     <meta name="description" content="Blooket is an exciting take on modern classroom review games, matching action with education to create the ultimate learning experience!" />
     <meta property="og:title" content="Blooket – Fun, Free, Educational Games for Everyone" />
     <meta property="og:description" content="Blooket is an exciting take on modern classroom review games, matching action with education to create the ultimate learning experience!" />
     <meta property="og:type" content="website" />
-    <meta property="og:image" content="/images/BlooketLogoBanner.jpg" />
+    <meta property="og:image" content="./images/BlooketLogoBanner.jpg" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Blooket – Fun, Free, Educational Games for Everyone" />
     <meta name="twitter:description" content="Blooket is an exciting take on modern classroom review games, matching action with education to create the ultimate learning experience!" />
-    <meta name="twitter:image" content="/images/BlooketLogoBanner.jpg" />
+    <meta name="twitter:image" content="./images/BlooketLogoBanner.jpg" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Titan+One&display=swap" rel="stylesheet">
   </head>
   <body>
     <div id="root"></div>
+    <script>
+      // When hosted on GitHub Pages from the repository root, redirect to the prebuilt bundle in /dist/
+      (function() {
+        if (window.location.hostname.endsWith('github.io') && !window.location.pathname.includes('/dist') && !window.location.pathname.includes('/docs')) {
+          var cleanPath = window.location.pathname.replace(/\/+$/, '');
+          window.location.replace(cleanPath + '/dist/' + window.location.search + window.location.hash);
+        }
+      })();
+    </script>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
