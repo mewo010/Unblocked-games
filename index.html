@@ -20,15 +20,6 @@
   </head>
   <body>
     <div id="root"></div>
-    <script>
-      // When hosted on GitHub Pages from the repository root, redirect to the prebuilt bundle in /dist/
-      (function() {
-        if (window.location.hostname.endsWith('github.io') && !window.location.pathname.includes('/dist') && !window.location.pathname.includes('/docs')) {
-          var cleanPath = window.location.pathname.replace(/\/+$/, '');
-          window.location.replace(cleanPath + '/dist/' + window.location.search + window.location.hash);
-        }
-      })();
-    </script>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
