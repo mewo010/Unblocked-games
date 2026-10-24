@@ -1,0 +1,6 @@
+{
+  "name": "Blooket",
+  "description": "Blooket is an exciting take on modern classroom review games, matching action with education to create the ultimate learning experience!",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

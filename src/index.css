@@ -1,0 +1,258 @@
+@import "tailwindcss";
+
+:root {
+  /* Colors */
+  --blue: #0bc2cf;
+  --blue-text: #32999f;
+  --blue-wave: #1671e9;
+  --purple: #9a49aa;
+  --purple-dark: #411060;
+  --gray: #757575;
+  --gray-text: #3a3a3a;
+  --gray-border: #dcdcdc;
+  --gray-shadow: rgba(0, 0, 0, 0.2);
+  --white: #ffffff;
+  --black: #000000;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Nunito', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: var(--gray-text);
+  background-color: #ffffff;
+  overflow-x: hidden;
+}
+
+.font-titan {
+  font-family: 'Titan One', cursive, sans-serif;
+}
+
+.font-nunito {
+  font-family: 'Nunito', sans-serif;
+}
+
+/* 3D Button style - iconic Blooket look */
+.button {
+  position: relative;
+  transition: filter 250ms;
+  cursor: pointer;
+  outline: none;
+  border: none;
+  border-radius: 10px;
+  user-select: none;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.buttonBack {
+  position: absolute;
+  top: 0;
+  left: 0;
+  filter: brightness(0.7);
+  border-radius: 10px;
+  width: 100%;
+  height: 100%;
+  background-color: var(--blue);
+}
+
+.secondary .buttonBack {
+  filter: none;
+  background-color: var(--gray-border);
+}
+
+.purple-btn .buttonBack {
+  background-color: #773385;
+}
+
+.green-btn .buttonBack {
+  background-color: #2e8b1e;
+}
+
+.orange-btn .buttonBack {
+  background-color: #c96200;
+}
+
+.red-btn .buttonBack {
+  background-color: #a82020;
+}
+
+.gold-btn .buttonBack {
+  background-color: #b58000;
+}
+
+.buttonFront {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  transform: translateY(-4px);
+  transition: transform 600ms cubic-bezier(0.3, 0.7, 0.4, 1);
+  border-radius: 10px;
+  padding: 5px 20px;
+  min-height: 38px;
+  color: var(--white);
+  font-weight: 800;
+  font-size: 20px;
+  font-family: 'Nunito', sans-serif;
+  text-align: center;
+  background-color: var(--blue);
+  box-sizing: border-box;
+}
+
+.purple-btn .buttonFront {
+  background-color: var(--purple);
+}
+
+.green-btn .buttonFront {
+  background-color: #3bb528;
+}
+
+.orange-btn .buttonFront {
+  background-color: #ff7f0e;
+}
+
+.red-btn .buttonFront {
+  background-color: #e53935;
+}
+
+.gold-btn .buttonFront {
+  background-color: #f5a623;
+  color: #fff;
+}
+
+.secondary .buttonFront {
+  border: 2px solid var(--gray-border);
+  border-bottom: none;
+  background-color: var(--white);
+  color: var(--blue-text);
+}
+
+.secondary.gray-text .buttonFront {
+  color: var(--gray);
+}
+
+.button:hover {
+  filter: brightness(108%);
+}
+
+.button:hover > .buttonFront {
+  transform: translateY(-6px);
+  transition: transform 250ms cubic-bezier(0.3, 0.7, 0.4, 1.5);
+}
+
+.button:active > .buttonFront {
+  transform: translateY(-1px);
+  transition: transform 34ms;
+}
+
+/* Animations for waves */
+.wave-front {
+  animation: anim-v-wave 2s -0.75s infinite alternate;
+}
+
+.wave-front-path {
+  animation: anim-h-wave 3.75s linear -3s infinite;
+}
+
+.wave-mid-front {
+  animation: anim-v-wave 2s -0.5s infinite alternate;
+}
+
+.wave-mid-front-path {
+  animation: anim-h-wave 3.5s linear -2s infinite;
+}
+
+.wave-mid-back {
+  animation: anim-v-wave 2s -0.25s infinite alternate;
+}
+
+.wave-mid-back-path {
+  animation: anim-h-wave 3.25s linear -1s infinite;
+}
+
+.wave-back {
+  animation: anim-v-wave 2s infinite alternate;
+}
+
+.wave-back-path {
+  animation: anim-h-wave 3s linear infinite;
+}
+
+@keyframes anim-h-wave {
+  0% {
+    transform: translateX(0px);
+  }
+  100% {
+    transform: translateX(105px);
+  }
+}
+
+@keyframes anim-v-wave {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(-20px);
+  }
+}
+
+/* Blook animations */
+@keyframes blook-float {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-12px) rotate(1.5deg);
+  }
+}
+
+@keyframes blook-bounce {
+  0%, 100% {
+    transform: translateY(0) scale(1);
+  }
+  40% {
+    transform: translateY(-16px) scale(1.02, 0.98);
+  }
+  60% {
+    transform: translateY(-12px) scale(0.98, 1.02);
+  }
+}
+
+@keyframes blook-bob {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-8px) rotate(-2deg);
+  }
+}
+
+.animate-blook-float {
+  animation: blook-float 4s ease-in-out infinite;
+}
+
+.animate-blook-bounce {
+  animation: blook-bounce 2.2s ease-in-out infinite;
+}
+
+.animate-blook-bob {
+  animation: blook-bob 3.2s ease-in-out infinite;
+}
+
+/* Custom scrollbars */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+::-webkit-scrollbar-thumb {
+  background: #0bc2cf;
+  border-radius: 5px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #09a1ad;
+}

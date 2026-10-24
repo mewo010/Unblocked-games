@@ -1,0 +1,121 @@
+@import url('https://fonts.googleapis.com/css?family=Nunito:400,700|Titan+One');
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap');
+
+:root {
+  /* Colors */
+  --blue: #0bc2cf;
+  --blue-text: #32999f;
+  --blue-wave: #1671e9;
+  --purple: #9a49aa;
+  --purple-dark: #411060;
+  --gray: #757575;
+  --gray-text: #3a3a3a;
+  --gray-border: #dcdcdc;
+  --gray-shadow: rgba(0, 0, 0, 0.2);
+  --white: #ffffff;
+  --black: #000000;
+}
+
+html,
+body {
+  margin: 0px;
+  padding: 0px;
+  max-width: 100%;
+  overflow-x: hidden;
+  box-sizing: border-box;
+}
+
+body,
+div {
+  font-family: 'Nunito', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: var(--gray-text);
+}
+
+::selection {
+  background-color: #0ab6c250;
+}
+
+/* _includes/components/button.html */
+
+.button {
+  position: relative;
+  transition: filter 250ms;
+  cursor: pointer;
+  outline: none;
+  border: none;
+  border-radius: 10px;
+  user-select: none;
+  text-decoration: none;
+}
+
+.buttonBack {
+  position: absolute;
+  top: 0;
+  left: 0;
+  filter: brightness(0.7);
+  border-radius: 10px;
+  width: 100%;
+  height: 100%;
+  background-color: var(--blue);
+}
+
+.secondary .buttonBack {
+  filter: none;
+  background-color: var(--gray-border);
+}
+
+.buttonFront {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  transform: translateY(-4px);
+  transition: transform 600ms cubic-bezier(0.3, 0.7, 0.4, 1);
+  border-radius: 10px;
+  padding: 5px 20px;
+  min-height: 35px;
+  color: var(--white);
+  font-weight: bold;
+  font-size: 22px;
+  font-family: 'Nunito', sans-serif;
+  text-align: center;
+  background-color: var(--blue);
+}
+
+.secondary .buttonFront {
+  border: 2px solid var(--gray-border);
+  border-bottom: none;
+  background-color: var(--white);
+  color: var(--gray);
+}
+
+.buttonIcon {
+  width: 15px;
+  margin-right: 10px;
+}
+
+.button:hover {
+  filter: brightness(110%);
+}
+
+.button:hover > .buttonFront {
+  transform: translateY(-6px);
+  transition: transform 250ms cubic-bezier(0.3, 0.7, 0.4, 1.5);
+}
+
+.button:active > .buttonFront {
+  transform: translateY(-2px);
+  transition: transform 34ms;
+}
+
+/* screen reader only - text for accessiblity */
+.sr-only {
+  position: absolute;
+  top: auto;
+  left: -10000px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
